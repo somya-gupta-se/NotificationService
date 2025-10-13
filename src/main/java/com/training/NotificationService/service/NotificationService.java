@@ -16,6 +16,7 @@ public class NotificationService {
     @KafkaListener(topics = "orderTopic", groupId = "notificationGroup")
     public void handleOrderPlacedNotification(ConsumerRecord<String, String> record) {
         LOGGER.info("Received Notification: {} {}",record.key(),record.value());
+        LOGGER.info("Added to test jenkins");
     }
 
     @KafkaListener(topics = "paymentTopic", groupId = "notificationGroup")
